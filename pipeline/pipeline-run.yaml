@@ -16,7 +16,7 @@ spec:
       value: "deploy.yaml"
     - name: "imageUrl"
       #value: "private-docker-registry.kube-system:5000/app"
-      value: "image-registry.openshift-image-registry.svc:5000/default/app"
+      value: "https://hub.docker.com/repository/docker/060696/app"
     - name: "imageTag"
       value: "0.0.1"
   serviceAccountName: service-account
