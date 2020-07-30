@@ -1,0 +1,10 @@
+You need to configure your dockerhub seceret here to push the image to your repository.
+To configure it use command ;
+
+$ kubectl create secret docker-registry regcred \
+                    --docker-server=<your-registry-server> \
+                    --docker-username=<your-name> \
+                    --docker-password=<your-pword> \
+                    --docker-email=<your-email>
+                    
+This will create a secret for your dockerhub which is used to pull image to your repository.
