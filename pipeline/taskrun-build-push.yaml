@@ -5,7 +5,7 @@ metadata:
 spec:
   serviceAccountName: pipeline
   taskRef:
-    name: sampletask
+    name: task-build-push
   params:
     - name: pathToDockerFile
       value: Dockerfile
