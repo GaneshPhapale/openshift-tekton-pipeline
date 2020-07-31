@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: samplepipelinerun
+spec:
+  serviceAccountName: pipeline
+  pipelineRef:
+    name: pipeline-hello-app
+  resources:
+    - name: source-repo
+      resourceRef:
+        name: git-input
+    - name: web-image
+      resourceRef:
+        name: imageurl
