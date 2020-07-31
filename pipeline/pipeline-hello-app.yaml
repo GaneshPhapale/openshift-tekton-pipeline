@@ -1,0 +1,25 @@
+kind: Pipeline
+metadata:
+  name: pipeline-hello-app
+spec:
+  resources:
+    - name: source-repo
+      type: git
+    - name: web-image
+      type: image
+  tasks:
+    - name: pipeline-task-build-push
+      taskRef:
+        name: task-build-push
+      params:
+        - name: pathToDockerFile
+          value: Dockerfile
+        - name: pathToContext
+          value: /workspace/docker-source/src
+      resources:
+        inputs:
+          - name: docker-source
+            resource: source-repo
+        outputs:
+          - name: builtImage
+            resource: web-image
