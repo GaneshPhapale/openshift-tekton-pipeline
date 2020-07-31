@@ -6,15 +6,16 @@ spec:
   serviceAccountName: pipeline
   taskRef:
     name: task-build-push
-  params:
-    - name: pathToDockerFile
-      value: Dockerfile
-  resources:
-    inputs:
+  inputs:
+    resources:
       - name: docker-source
         resourceRef:
           name: git-input
-    outputs:
+    params:
+      - name: pathToDockerFile
+        value: Dockerfile
+  outputs:
+    resources:
       - name: builtImage
         resourceRef:
-          name: imageurl
+          name:imageurl
